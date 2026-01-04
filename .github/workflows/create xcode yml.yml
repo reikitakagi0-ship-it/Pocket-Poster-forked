@@ -12,8 +12,8 @@ jobs:
       - name: Install xcodegen
         run: brew install xcodegen
 
-      - name: Generate spec from existing project
-        run: xcodegen spec
+      - name: Generate spec
+        run: xcodegen spec --project "Pocket-Poster.xcodeproj"
 
       - name: Upload project.yml
         uses: actions/upload-artifact@v4
