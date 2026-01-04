@@ -13,41 +13,24 @@ settings:
     TARGETED_DEVICE_FAMILY: "1,2"
     PRODUCT_NAME: "Pocket Poster"
 
-# --- 元々使われていた SwiftPM 依存 ---
-packages:
-  ZIPFoundation:
-    url: https://github.com/weichsel/ZIPFoundation.git
-    from: 0.9.0
-
-  CachedAsyncImage:
-    url: https://github.com/lorenzofiamingo/swiftui-cached-async-image.git
-    from: 2.0.0
-
 targets:
   Pocket Poster:
     type: application
     platform: iOS
 
-    # ソース
     sources:
       - path: Pocket Poster
         excludes:
-          - "**/*.xcassets"
           - "**/*.lproj"
-          - "Preview Content"
+          - "**/*.strings"
+          - "**/*.stringsdict"
 
-    # リソース
     resources:
       - path: Pocket Poster/Assets.xcassets
       - path: Pocket Poster/Preview Content
       - path: Pocket Poster
         includes:
           - "**/*.xcstrings"
-
-    # SwiftPM 依存（元通り）
-    dependencies:
-      - package: ZIPFoundation
-      - package: CachedAsyncImage
 
     info:
       path: Pocket Poster/Info.plist
@@ -59,13 +42,11 @@ targets:
         MARKETING_VERSION: "3.0"
         CURRENT_PROJECT_VERSION: "0"
         CODE_SIGN_STYLE: Automatic
+        CODE_SIGNING_ALLOWED: NO
         ENABLE_PREVIEWS: NO
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
 
 schemes:
   Pocket Poster:
-    build:
-      targets:
-        Pocket Poster: all
     archive:
       config: Release
