@@ -39,5 +39,8 @@ targets:
 
 schemes:
   Pocket Poster:
+    build:
+      targets:
+        Pocket Poster: all
     archive:
       config: Release
