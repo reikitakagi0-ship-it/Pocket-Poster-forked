@@ -20,17 +20,9 @@ targets:
 
     sources:
       - path: Pocket Poster
-        excludes:
-          - "**/*.xcassets"
-          - "**/*.lproj"
-          - "Preview Content"
 
     resources:
-      - path: Pocket Poster/Assets.xcassets
-      - path: Pocket Poster/Preview Content
       - path: Pocket Poster
-        includes:
-          - "**/*.lproj"
 
     info:
       path: Pocket Poster/Info.plist
