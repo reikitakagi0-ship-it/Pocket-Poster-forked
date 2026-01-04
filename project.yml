@@ -6,6 +6,19 @@ options:
     iOS: "16.0"
   generateEmptyDirectories: true
 
+packages:
+  ZIPFoundation:
+    url: https://github.com/weichsel/ZIPFoundation.git
+    from: 0.9.0
+
+  CachedAsyncImage:
+    url: https://github.com/lorenzofiamingo/swiftui-cached-async-image.git
+    from: 2.1.0
+
+  Dynamic:
+    url: https://github.com/mhdhejazi/Dynamic.git
+    from: 1.3.0
+
 settings:
   base:
     SWIFT_VERSION: 5.9
@@ -26,14 +39,19 @@ targets:
           - "**/*.stringsdict"
 
     resources:
-      - path: Pocket Poster/Assets.xcassets
-      - path: Pocket Poster/Preview Content
       - path: Pocket Poster
         includes:
           - "**/*.xcstrings"
+      - path: Pocket Poster/Assets.xcassets
+      - path: Pocket Poster/Preview Content
 
     info:
       path: Pocket Poster/Info.plist
+
+    dependencies:
+      - package: ZIPFoundation
+      - package: CachedAsyncImage
+      - package: Dynamic
 
     settings:
       base:
