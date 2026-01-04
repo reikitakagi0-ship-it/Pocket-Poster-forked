@@ -42,7 +42,7 @@ targets:
       - path: Pocket Poster/Preview Content
       - path: Pocket Poster
         includes:
-          - "**/*.lproj"
+          - "**/*.xcstrings"
 
     # SwiftPM 依存（元通り）
     dependencies:
