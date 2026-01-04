@@ -9,7 +9,7 @@ options:
 settings:
   base:
     SWIFT_VERSION: 5.9
-    IPHONEOS_DEPLOYMENT_TARGET: 16.0
+    IPHONEOS_DEPLOYMENT_TARGET: "16.0"
     TARGETED_DEVICE_FAMILY: "1,2"
     PRODUCT_NAME: "Pocket Poster"
 
@@ -48,5 +48,8 @@ targets:
 
 schemes:
   Pocket Poster:
+    build:
+      targets:
+        Pocket Poster: all
     archive:
       config: Release
