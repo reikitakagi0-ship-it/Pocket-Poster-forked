@@ -17,7 +17,7 @@ packages:
 
   Dynamic:
     url: https://github.com/mhdhejazi/Dynamic.git
-    branch: main
+    branch: master
 
 settings:
   base:
