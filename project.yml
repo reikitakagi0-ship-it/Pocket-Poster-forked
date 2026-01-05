@@ -22,9 +22,8 @@ packages:
 settings:
   base:
     SWIFT_VERSION: 5.9
-    IPHONEOS_DEPLOYMENT_TARGET: "16.0"
-    TARGETED_DEVICE_FAMILY: "1,2"
-    PRODUCT_NAME: "Pocket Poster"
+    SWIFT_STRICT_CONCURRENCY: minimal
+    SWIFT_ENABLE_EXPLICIT_CONCURRENCY: NO
     SWIFT_TREAT_WARNINGS_AS_ERRORS: NO
 targets:
   Pocket Poster:
