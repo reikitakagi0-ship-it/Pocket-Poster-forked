@@ -50,8 +50,4 @@ targets:
       path: Pocket-Poster-Info.plist
       properties: {}
 
-packages:
-  GIFImage:
-    path: Pocket Poster/Packages/GIFImage
-
 targetTemplates: {}
