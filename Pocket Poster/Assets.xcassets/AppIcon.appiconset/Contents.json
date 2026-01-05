@@ -2,7 +2,7 @@
   "images" : [
     {
       "filename" : "pocket_poster.png",
-      "idiom" : "universal",
+      "idiom" : "ios-marketing",
       "platform" : "ios",
       "size" : "1024x1024"
     },
@@ -16,7 +16,7 @@
       "filename" : "pocket_poster_transparent.png",
       "idiom" : "universal",
       "platform" : "ios",
-      "size" : "1024x1024"
+      "size" : "60x60"
     },
     {
       "appearances" : [
@@ -28,7 +28,7 @@
       "filename" : "pocket_poster_transparent 1.png",
       "idiom" : "universal",
       "platform" : "ios",
-      "size" : "1024x1024"
+      "size" : "60x60"
     }
   ],
   "info" : {
