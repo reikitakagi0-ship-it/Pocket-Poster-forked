@@ -26,6 +26,7 @@ settings:
     TARGETED_DEVICE_FAMILY: "1,2"
     PRODUCT_NAME: "Pocket Poster"
     SWIFT_TREAT_WARNINGS_AS_ERRORS: NO
+    OTHER_SWIFT_FLAGS: "-warnings-as-errors=false"
 targets:
   Pocket Poster:
     type: application
