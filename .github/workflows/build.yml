@@ -30,8 +30,10 @@ jobs:
             -project "Pocket Poster.xcodeproj" \
             -scheme "Pocket Poster" \
             -configuration Release \
+            -destination "generic/platform=iOS" \
             -archivePath build/PocketPoster.xcarchive \
-            CODE_SIGNING_ALLOWED=NO
+            CODE_SIGNING_ALLOWED=NO \
+            SKIP_INSTALL=NO
         shell: bash
 
       - name: Upload xcarchive
