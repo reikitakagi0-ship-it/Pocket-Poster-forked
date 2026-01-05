@@ -1,30 +1,15 @@
 name: Pocket Poster
 
 options:
-  xcodeVersion: "26.0"
   deploymentTarget:
     iOS: "16.0"
-  generateEmptyDirectories: true
-
-packages:
-  ZIPFoundation:
-    url: https://github.com/weichsel/ZIPFoundation.git
-    from: 0.9.0
-
-  CachedAsyncImage:
-    url: https://github.com/lorenzofiamingo/swiftui-cached-async-image.git
-    from: 2.1.0
-
-  Dynamic:
-    url: https://github.com/mhdhejazi/Dynamic.git
-    branch: master
 
 settings:
   base:
     SWIFT_VERSION: 5.9
-    SWIFT_STRICT_CONCURRENCY: minimal
-    SWIFT_ENABLE_EXPLICIT_CONCURRENCY: NO
-    SWIFT_TREAT_WARNINGS_AS_ERRORS: NO
+    IPHONEOS_DEPLOYMENT_TARGET: 16.0
+    TARGETED_DEVICE_FAMILY: "1,2"
+
 targets:
   Pocket Poster:
     type: application
@@ -32,41 +17,27 @@ targets:
 
     sources:
       - path: Pocket Poster
-        excludes:
-          - "**/*.lproj"
-          - "**/*.strings"
-          - "**/*.stringsdict"
 
     resources:
       - path: Pocket Poster
         includes:
+          - "**/*.xcassets"
+          - "**/*.strings"
+          - "**/*.stringsdict"
           - "**/*.xcstrings"
-      - path: Pocket Poster/Assets.xcassets
-      - path: Pocket Poster/Preview Content
 
     info:
       path: Pocket Poster/Info.plist
 
-    dependencies:
-      - package: ZIPFoundation
-      - package: CachedAsyncImage
-      - package: Dynamic
-
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.lemin.Pocket-Poster
-        DEVELOPMENT_TEAM: 2P4CP47H76
         MARKETING_VERSION: "3.0"
         CURRENT_PROJECT_VERSION: "0"
-        CODE_SIGN_STYLE: Automatic
         CODE_SIGNING_ALLOWED: NO
-        ENABLE_PREVIEWS: NO
-        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        CODE_SIGNING_REQUIRED: NO
 
 schemes:
   Pocket Poster:
-    build:
-      targets:
-        Pocket Poster: all
     archive:
       config: Release
