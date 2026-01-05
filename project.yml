@@ -25,7 +25,7 @@ settings:
     IPHONEOS_DEPLOYMENT_TARGET: "16.0"
     TARGETED_DEVICE_FAMILY: "1,2"
     PRODUCT_NAME: "Pocket Poster"
-
+    SWIFT_TREAT_WARNINGS_AS_ERRORS: NO
 targets:
   Pocket Poster:
     type: application
