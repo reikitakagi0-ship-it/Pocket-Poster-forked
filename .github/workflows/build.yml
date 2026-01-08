@@ -28,7 +28,6 @@ jobs:
 
       # 3. XcodeGen でプロジェクト生成
       - name: Generate Xcode project
-        working-directory: ./PocketPoster
         run: xcodegen generate
 
       # 4. Swift Package 依存解決
