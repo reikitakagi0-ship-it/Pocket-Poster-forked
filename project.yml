@@ -33,7 +33,7 @@ targets:
       path: Pocket-Poster-Info.plist
     sources:
   - "./Pocket Poster/**"
-resources:
+　　resources:
   - "./Pocket Poster/**"
     dependencies:
       - package: ZIPFoundation
