@@ -43,7 +43,7 @@ jobs:
 
       # 6. アーカイブを GitHub Actions にアップロード（ダウンロード可能）
       - name: Upload archive
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: PocketPosterArchive
           path: build/PocketPoster.xcarchive
