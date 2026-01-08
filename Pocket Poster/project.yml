@@ -10,8 +10,8 @@ settings:
   base:
     SWIFT_VERSION: 5.0
     IPHONEOS_DEPLOYMENT_TARGET: 16.0
-    CODE_SIGN_STYLE: Manual        # 署名なし
-    CODE_SIGNING_REQUIRED: NO      # ビルド時に署名不要
+    CODE_SIGN_STYLE: Manual
+    CODE_SIGNING_REQUIRED: NO
     MARKETING_VERSION: 3.0
     CURRENT_PROJECT_VERSION: 0
     ENABLE_PREVIEWS: YES
@@ -30,11 +30,11 @@ targets:
     deploymentTarget: '16.0'
     productName: PocketPoster
     info:
-      path: Pocket-Poster-Info.plist
+      path: "../Pocket-Poster-Info.plist"   # 親ディレクトリの Info.plist を参照
     sources:
-      - path: "./PocketPoster/**"
+      - "./**"      # PocketPoster 内のすべてを取り込む
     resources:
-      - path: "./PocketPoster/**"
+      - "./**"
     dependencies:
       - package: ZIPFoundation
       - package: Dynamic
