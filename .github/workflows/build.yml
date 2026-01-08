@@ -1,36 +1,49 @@
-name: iOS Archive (iPhone only)
+name: iOS Archive
 
 on:
-  workflow_dispatch:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
 
 jobs:
-  build:
-    runs-on: macos-14
+  archive:
+    name: Build and Archive iOS App
+    runs-on: macos-latest
 
     steps:
-      - uses: actions/checkout@v4
+      # 1. リポジトリをチェックアウト
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      - name: Select Xcode 16.2
-        run: sudo xcode-select -s /Applications/Xcode_16.2.app
-
+      # 2. XcodeGen をインストール
       - name: Install XcodeGen
         run: brew install xcodegen
 
+      # 3. XcodeGen でプロジェクト生成
       - name: Generate Xcode project
         run: xcodegen generate
 
-      - name: Build archive (iPhone only)
+      # 4. Swift Package 依存解決
+      - name: Resolve Swift Packages
+        run: xcodebuild -resolvePackageDependencies -project PocketPoster.xcodeproj
+
+      # 5. アーカイブ生成（署名なし）
+      - name: Archive app
         run: |
           xcodebuild archive \
-            -project "Pocket Poster.xcodeproj" \
-            -scheme "Pocket Poster" \
+            -project PocketPoster.xcodeproj \
+            -scheme PocketPoster \
+            -sdk iphoneos \
             -configuration Release \
-            -destination 'generic/platform=iOS' \
             -archivePath build/PocketPoster.xcarchive \
-            CODE_SIGNING_ALLOWED=NO
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            SKIP_INSTALL=NO
 
-      - name: Upload xcarchive
-        uses: actions/upload-artifact@v4
+      # 6. アーカイブを GitHub Actions にアップロード（ダウンロード可能）
+      - name: Upload archive
+        uses: actions/upload-artifact@v3
         with:
-          name: PocketPoster-xcarchive
+          name: PocketPosterArchive
           path: build/PocketPoster.xcarchive
