@@ -31,9 +31,9 @@ targets:
     productName: PocketPoster
     info:
       path: Pocket-Poster-Info.plist
-    sources:
-  - "./Pocket Poster/**"
-　　resources:
+      sources:
+    - "./Pocket Poster/**"
+    resources:
   - "./Pocket Poster/**"
     dependencies:
       - package: ZIPFoundation
