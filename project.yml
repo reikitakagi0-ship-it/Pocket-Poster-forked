@@ -32,9 +32,9 @@ targets:
     info:
       path: Pocket-Poster-Info.plist
     sources:
-      - path: "./Pocket Poster/**"
+      - path: "./PocketPoster/**"
     resources:
-      - path: "./Pocket Poster/**"
+      - path: "./PocketPoster/**"
     dependencies:
       - package: ZIPFoundation
       - package: Dynamic
